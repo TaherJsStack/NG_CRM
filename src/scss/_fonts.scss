@@ -1,0 +1,73 @@
+// ============================> Arabic Fonts  <=====================================
+
+@font-face {
+    font-family: NotoSansArabic-Bold;
+    src: url(../assets/fonts/Noto_Sans_Arabic/NotoSansArabic-Bold.ttf);
+}
+@font-face {
+    font-family: NotoSansArabic-Medium;
+    src: url(../assets/fonts/Noto_Sans_Arabic/NotoSansArabic-Medium.ttf);
+}
+@font-face {
+    font-family: NotoSansArabic-Regular;
+    src: url(../assets/fonts/Noto_Sans_Arabic/NotoSansArabic-Regular.ttf);
+}
+@font-face {
+    font-family: NotoSansArabic-Light;
+    src: url(../assets/fonts/Noto_Sans_Arabic/NotoSansArabic-Light.ttf);
+}
+@font-face {
+    font-family: NotoSansArabic-Thin;
+    src: url(../assets/fonts/Noto_Sans_Arabic/NotoSansArabic-Thin.ttf);
+}
+
+// -------------------------------------------------------------------------------
+// ============================> English Font  <=====================================
+
+@font-face {
+    font-family: Poppins-Black;
+    src: url(../assets/fonts/Poppins/Poppins-Black.ttf);
+}
+
+@font-face {
+    font-family: Poppins-Medium;
+    src: url(../assets/fonts/Poppins/Poppins-Medium.ttf);
+}
+
+@font-face {
+    font-family: Poppins-Regular;
+    src: url(../assets/fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: Poppins-Light;
+    src: url(../assets/fonts/Poppins/Poppins-Light.ttf);
+}
+
+@font-face {
+    font-family: Poppins-Thin;
+    src: url(../assets/fonts/Poppins/Poppins-Thin.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url(../assets/fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+[dir="rtl"] {
+    --font-family-Bold:     NotoSansArabic-Bold;
+    --font-family-Medium:   NotoSansArabic-Medium;
+    --font-family-Regular:  NotoSansArabic-Regular;
+    --font-family-Light:    NotoSansArabic-Light;
+    --font-family-Thin:     NotoSansArabic-Thin;
+    --font-family-Mont-Reg: Montserrat-Regular;
+}
+[dir="ltr"] {
+    --font-family-Bold:    Poppins-Bold;
+    --font-family-Medium:  Poppins-Medium;
+    --font-family-Regular: Poppins-Regular;
+    --font-family-Light:   Poppins-Light;
+    --font-family-Thin:    Poppins-Thin;
+    --font-family-Mont-Reg: Montserrat-Regular;
+
+}

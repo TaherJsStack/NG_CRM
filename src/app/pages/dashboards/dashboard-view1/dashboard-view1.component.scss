@@ -1,0 +1,21 @@
+@import '../../../../scss/placeholder';
+
+.card{
+    .card-body{
+        .row{
+            .avatar-sm{
+                // background-color: aqua;
+                font-size: 70px;
+            }
+            .text-end{
+                h3{
+                    @extend %typography;
+                }
+            }
+        }
+    }
+}
+
+.card-widgets {
+    background-color: antiquewhite;
+}

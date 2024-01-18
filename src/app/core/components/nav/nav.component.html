@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-lg w-100 p-0">
+  <div class="container-fluid">
+    <a class="navbar-brand">
+      <button (click)="asideMenu.emit()" mat-icon-button class="" aria-label="">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+ 
+        <li class="nav-item dropdown" >
+          <a matRipple class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Create New
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" matRipple>Action</a></li>
+            <li><a class="dropdown-item" matRipple>Another action</a></li>
+            <li><hr class="dropdown-divider" matRipple></li>
+            <li><a class="dropdown-item" matRipple>Something else</a></li>
+          </ul>
+        </li>
+        <li class="nav-item" >
+          <button (click)="toggleTheme()" class="btn" matRipple>
+            <i class="fa" [ngClass]="isDarkTheme ? 'fa-moon-o' : 'fa-sun-o'" aria-hidden="true"></i>
+          </button>
+        </li>
+
+        <li class="nav-item" >
+          <button (click)="toggleLanguage()" class="btn" matRipple>
+            <i class="fa fa-language" aria-hidden="true"></i>
+            {{ this.langValue }}
+          </button>
+        </li>
+          
+        <li class="nav-item dropdown" >
+          <a class="nav-link dropdown-toggle bell-dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn" matRipple>
+              <span class="badge ">1</span>
+              <i class="fa fa-bell" aria-hidden="true"></i>
+            </button>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" matRipple>Action</a></li>
+            <li><a class="dropdown-item" matRipple>Another action</a></li>
+            <li><hr class="dropdown-divider" matRipple></li>
+            <li><a class="dropdown-item" matRipple>Something else</a></li>
+          </ul>
+        </li>
+
+      </ul>
+      
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      </form>
+
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown" >
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img class="rounded" src="assets/images/avatar/avatar.png" width="30" alt="" srcset="">
+            User Name
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" matRipple>Action</a></li>
+            <li><a class="dropdown-item" matRipple>Another action</a></li>
+            <li><hr class="dropdown-divider" matRipple></li>
+            <li><a class="dropdown-item" matRipple>Something else </a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

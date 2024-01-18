@@ -1,0 +1,189 @@
+<p>custom works!</p>
+     <!-- ==============================> filter <================================== -->
+     <div class="card filters p-3 p-md-4">
+
+        <div class="card-body">
+            <form action="">
+                <div class="row">
+
+                    <div class="col-md-10  col-8">
+                        <div class="input-group">
+                            <input class="form-control  w-75" type="text" placeholder="ابحث باسم المعرض" aria-label="default input example ">
+                        </div>
+                    </div>
+
+                    <div class="col-md-2  col-4 pull-right">
+                        <button type="button" class="btn search btn-main-color w-100">بحث</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==============================> order filter <================================== -->
+    <div class="card data-bs-table p-4 mt-4">
+
+        <div class="card-body">
+            <div class="info row flex-align-items-justify-content-flex-end">
+                <div class="col-6 col-md-6">
+                    <h6>المعارض (450)</h6>
+                </div>
+                <div class="col-6 col-md-6 flex-align-items-justify-content-flex-end">
+                    <div class="info-buttons">
+                        <a class="btn btn-main-background-color mt-0 mb-0 m-2 w-100" data-bs-toggle="modal" data-bs-target="#exhibitionsFormModal">
+                            <i class="fa fa-plus"></i> إضافة معرض جديد </a>
+                    </div>
+                </div>
+            </div>
+            <!-- table -->
+            <div class="row mt-5">
+                <div class="table-responsive">
+                    <table class="table align-middle mb-0 bg-white">
+                        <thead class="bg-light">
+                            <tr>
+                                <th> #</th>
+                                <th>إسم المعرض</th>
+                                <th>النسبة المئوية</th>
+                                <th>الحالة</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of list; let i = index">
+                                <td>
+                                    <p>{{ i + 1 }}</p>
+                                </td>
+                                <td>
+                                    <p>معرض القيمه</p>
+                                </td>
+                                <td>
+                                    <p class="fw-normal mb-1">10.00 %</p>
+                                </td>
+                                <td>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="checkExhibitions" accept="نعم" fail="لا" checked/>
+                                        <label class="form-check-label" for="checkExhibitions">نعم</label>
+                                    </div>
+                                </td>
+                                <td class="control-btn">
+                                    <button type="button" class="btn btn-link btn-sm btn-rounded" data-bs-toggle="modal" data-bs-target="#exhibitionsFormModal">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-link btn-sm btn-rounded" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal">
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                    </button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ===================> pagination container <=============== -->
+            <div class="row mt-3">
+                <nav class="d-flex justify-content-center" aria-label="...">
+                    <ul class="pagination">
+                        <li class="page-item disabled">
+                            <a class="page-link"  tabindex="-1" aria-disabled="true">
+                                <i class="fa-solid fa-angle-left"></i>
+                            </a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" aria-current="page" >1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" >2</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" >3</a></li>
+                        <li class="page-item"><a class="page-link" >...</a></li>
+                        <li class="page-item">
+                            <a class="page-link" >
+                                <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Exhibitions Form Modal -->
+    <div class="modal fade" id="exhibitionsFormModal" tabindex="-1" aria-labelledby="exhibitionsFormModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form role="form" name="exhibitions-form-modal" id="exhibitions-form-modal">
+                    <div class="modal-header bg-gradient-color">
+                        <h5 class="modal-title" id="exhibitionsFormModalLabel">إضافة معرض جديد</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal">
+                            <i class="fa fa-close"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-outline">
+                                    <input type="text" id="exhibitionName" name="exhibitionName" class="form-control" placeholder="اسم المعرض" />
+                                    <label class="form-label" for="exhibitionName">اسم المعرض</label>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <div class="form-outline">
+                                    <input type="text" id="percentage" name="percentage" class="form-control" placeholder="اسم المستخدم الخاص به" />
+                                    <label class="form-label" for="percentage">النسبة المئوية</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-md-8">
+                                <div class="card p-3">
+                                    <p>الحالة</p>
+                                    <div class="row mt-2">
+                                        <div class="col-md-6">
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input" type="radio" name="status" id="status1" value="1" checked="">
+                                                <label class="form-check-label" for="status1"> مفعل </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input" type="radio" name="status" id="status2" value="2" checked="">
+                                                <label class="form-check-label" for="status2"> غير مفعل </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn bg-transparent" data-bs-dismiss="modal">إعادة تعيين</button>
+                        <button type="submit" class="btn btn-main-background-color">حفظ وإضافة</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body ">
+                    <div class="row text-center">
+                        <div class="icon pt-5 pb-2">
+                            <img src="./assets/icons/delete-confirm.svg" alt="" srcset="">
+                        </div>
+                        <b class="mt-4 mb-2">هل تريد الحذف</b>
+                        <p>في حالة تأكيد الحذف فسوف تفقد هذه البيانات <br>ولا يمكنك الوصول لها مره أخري</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn bg-transparent" data-bs-dismiss="modal"> تأكيد الحذف</button>
+                    <button type="button" class="btn btn-main-background-color" data-bs-dismiss="modal">إلغاء</button>
+                </div>
+            </div>
+        </div>
+    </div>

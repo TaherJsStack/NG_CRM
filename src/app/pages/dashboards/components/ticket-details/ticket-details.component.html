@@ -1,0 +1,48 @@
+<div class="card ticket-details text-center">
+    <!-- trash button -->
+    <div class="trash-btn">
+        <button [tooltipEvent]="tooltipEvent" class="btn" [pTooltip]="tooltipContent" tooltipPosition="bottom" label="Button">
+            <ng-template #tooltipContent>
+                <div class="flex align-items-center">
+                    <span> حذف </span>
+                </div>
+            </ng-template>
+            <img src="assets/icons/trash.svg" alt="" srcset="">
+        </button>
+    </div>
+
+    <!-- card header -->
+    <div class="card-header">
+        <h5>عرض التذكرة الخاصة بالفيلم</h5>
+        <button class="btn m-auto " [cdkCopyToClipboard]="value">
+            {{ value }}
+            <img src="assets/icons/copy.svg" alt="" srcset="" class="">
+        </button>
+        <p>فعال حتي 15 يوليو 2023</p>
+    </div>
+
+    <!-- <hr> -->
+    <div class="hr"></div>
+
+    <!-- card body -->
+    <div class="card-body py-0 d-flex justify-content-between align-items-center">
+        <div class="text d-flex justify-content-between  align-items-end">
+            <div class="d-flex flex-column">
+                <label>خصم</label>
+                <span>25% </span>
+            </div>
+            <button class="btn">
+                <div class="icon-container">
+                    <img src="assets/icons/send-2.svg" alt="" srcset="">
+                </div>
+                مشاركة
+            </button>
+        </div>
+        <div class="qr-code-container">
+            <div class="qr-code">
+                <qrcode [qrdata]="'Your data string'" [width]="25"  [errorCorrectionLevel]="'M'"></qrcode>
+            </div>
+        </div>
+    </div>
+
+</div>

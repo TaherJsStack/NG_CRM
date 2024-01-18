@@ -1,0 +1,101 @@
+<div class="card">
+    <div class="table-responsive">
+        <table class="table m-0">
+            <thead class="">
+              <tr>
+                <th scope="col">
+                  <p>#</p>
+                </th>
+                <th scope="col">
+                  <p>المستخدم</p>
+                </th>
+                <th scope="col">
+                  <p>رقم التذكرة</p>
+                </th>
+                <th scope="col">
+                  <p>قيمى التذكرة</p>
+                </th>
+                <th scope="col">
+                  <p>السينمات</p>
+                </th>
+                <th scope="col">
+                  <p>عدد الأشخاص</p>
+                </th>
+                <th scope="col">
+                  <p>عدد مرات الشراء</p>
+                </th>
+                <th scope="col">
+                  <p>التذكرة</p>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of dataList; let i = index">
+                <th scope="row">{{ i }} </th>
+                <td class="user">
+                  <div class="d-flex justify-content-center">
+                    <div class="icon-container ms-2 d-flex">
+                      <img src="{{item.user.avatar}}" alt="" srcset="">
+                    </div>
+                    <div class="info">
+                      <p class="m-0">{{item.user.name}}</p>
+                      <small>{{item.user.phone}}</small>
+                    </div>
+                  </div>
+                </td>
+                <td>{{item.ticketNo}}</td>
+                <td>${{ item.ticketValue }}</td>
+                <td>{{ item.cinemas }} ...</td>
+                <td>{{ item.countOfPeople }}</td>
+                <td>{{ item.purchasesTimes }} </td>
+                <td class="ticket">
+                  <div class="d-flex justify-content-center align-items-center">
+                    <button class="btn ticket-icon-btn">
+                      <img src="assets/icons/ticket-2.svg" alt="" srcset="">
+                    </button>
+                    <div class="info">
+                      <p class="m-0"> {{ item.ticket.no }} </p>
+                      <small>{{ item.ticket.types }}</small>
+                    </div>
+                    <button class="btn ticket-download-btn">
+                      <img src="assets/icons/download.svg" alt="" srcset="">
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <section class="d-flex justify-content-between">
+              <div class="page-items d-flex justify-content-between align-items-center">
+                <p>عرض </p>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>20</option>
+                  <option value="1">40</option>
+                  <option value="2">80</option>
+                  <option value="3">120</option>
+                </select>
+                <p>من اصل {{ dataList.length }}</p>
+              </div>
+
+               <nav aria-label="Page navigation">
+                <ul class="pagination m-0">
+                  <li class="page-item">
+                    <a class="page-link">
+                      <img src="assets/icons/right-arrow.svg" alt="" srcset="">
+                    </a>
+                  </li>
+                  <li class="page-item active"><a class="page-link">1</a></li>
+                  <li class="page-item"><a class="page-link">2</a></li>
+                  <li class="page-item"><a class="page-link">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link">
+                      <img src="assets/icons/left-arrow.svg" alt="" srcset="">
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+         
+          </section>
+    </div>
+</div>

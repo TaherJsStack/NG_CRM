@@ -1,0 +1,16 @@
+<mat-form-field class="datepicker">
+    <mat-date-range-input
+      [formGroup]="campaignTwo"
+      [rangePicker]="campaignTwoPicker"
+      [comparisonStart]="campaignOne.value.start"
+      [comparisonEnd]="campaignOne.value.end">
+      <input matStartDate placeholder="Start date" formControlName="start">
+      <input matEndDate placeholder="End date" formControlName="end">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matIconSuffix [for]="campaignTwoPicker">
+        <mat-icon matDatepickerToggleIcon>
+            <img src="assets/icons/chevron-down.svg">
+        </mat-icon>
+    </mat-datepicker-toggle>
+    <mat-date-range-picker #campaignTwoPicker></mat-date-range-picker>
+  </mat-form-field>

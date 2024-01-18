@@ -1,0 +1,118 @@
+// @import '../../../../scss/mixins';
+@import '../../../../../scss/mixins';
+
+.filter{
+    .filter-right-content{
+        .title{
+            font-size:  var(--font-size-16);
+            font-weight: 400;
+            line-height: 19px;
+            letter-spacing: 0em;
+            font-family: NotoSansArabic-Regular;
+            display: block;
+            margin-inline-end: 5px;
+        }
+        .input-group{
+            width: 277px;
+            input{
+                width: 277px;
+                height: 36px;
+                border: 0.75px solid #92A1AD66;
+            }
+        }
+        button{
+            margin-inline-start: 5px;
+            width: 40px;
+            height: 36px;
+            border: 0.75px solid #92A1AD66;
+            @include border-radius(7.5px);
+            font-family: NotoSansArabic-Regular;
+        }
+    }
+    .filter-left-content {
+        .form-check{
+            .form-check-input{
+                &:checked{
+                    background-color: #8A74F9;
+                    border-color: #8A74F9;
+                }
+                &:focus{
+                    outline: unset;
+                    box-shadow: unset;
+                }
+            }
+            .form-check-label{
+                font-family: NotoSansArabic-Regular;
+                font-size:  var(--font-size-14);
+                font-weight: 400;
+                line-height: 17px;
+                letter-spacing: 0em;
+                text-align: left;
+            }
+        }
+        button{
+            background-color: #8A74F9;
+            width: 100px;
+            height: 35px;
+            padding: 13px, 10px, 13px, 10px;
+            margin-inline-start: 8px;
+            @include border-radius(6px);
+            font-family: NotoSansArabic-Medium;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: 0em;
+            text-align: center;
+            color: #fff;
+        }
+    }
+}
+
+:root :host-context(html[dir="ltr"]) {
+
+    
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@media (max-width: 1399.98px) { 
+   
+}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) { 
+   
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) { 
+
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 768.98px) { 
+
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+    .filter{
+        flex-direction: column;
+        gap: 10px;
+        .filter-right-content{
+            width: 100%;
+            justify-content: space-between;
+            .input-group{
+                width: 177px;
+            }
+        }
+        .filter-left-content {
+            width: 100%;
+            justify-content: space-between;
+            .form-check{
+                .form-check-label{
+                    font-size:  var(--font-size-14);
+                }
+            }
+        }
+    }
+}

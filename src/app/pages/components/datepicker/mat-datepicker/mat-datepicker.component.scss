@@ -1,0 +1,73 @@
+.datepicker{
+    max-height: 20px;
+    // background-color: rebeccapurple;
+    display: block;
+    &:hover{
+        background-color: transparent !important;
+    }
+    mat-date-range-input{
+        // background-color: green;
+    }
+    mat-datepicker-toggle {
+        // background-color: rgb(13, 0, 255);
+        width: 20px;
+        display: inline-block;
+        mat-icon{
+            // background-color: aqua;
+            --mdc-icon-button-icon-size: 13px;
+            --mdc-icon-button-state-layer-size: 0;
+            --mdc-icon-button-state-layer-size: 16px;
+        }
+        .mat-mdc-focus-indicator{
+            // background-color: brown;
+        }
+    }
+    ::ng-deep {
+        .mat-mdc-form-field-flex{
+            // background: red;
+            height: 20px;
+        }
+        
+        .mat-mdc-icon-button.mat-mdc-button-base{
+            width: 0;
+            padding: 0;
+        }
+        .mdc-text-field--filled:not(.mdc-text-field--disabled){
+            background-color: transparent;
+            padding: 0;
+        }
+        .mdc-line-ripple {
+            display: none;
+        }
+    }
+}
+
+
+:root :host-context(html[dir="ltr"]) {
+    
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+    
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 768.98px) { 
+
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) { 
+
+}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) { 
+   
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@media (max-width: 1399.98px) { 
+   
+}

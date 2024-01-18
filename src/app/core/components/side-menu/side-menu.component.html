@@ -1,0 +1,71 @@
+<section>
+
+    <div class="logo d-flex justify-content-center">
+        <a target="_blank"  routerLink="/">
+            <label>Obs </label> <span> tito</span>
+        </a>
+    </div>
+    
+    <hr />
+            
+    <ng-container *ngFor="let list of sideList; let x = index">
+        <span class="sectioneTitle" style="color: var(--text-secondary-color);">{{ list.sectioneTitle }}</span>
+        <mat-accordion #accordion="matAccordion" *ngIf="list.accordionItems.length">
+            <mat-expansion-panel    #MatExpansionPanel 
+                                    (opened)="panelOpenState = true"
+                                    (closed)="panelOpenState = false"
+                                    (click)="toggleAccordion(x, i)"
+                                    *ngFor="let item of list.accordionItems; let i = index"
+                                    [expanded]="activePanel.outerIndex === x && activePanel.innerIndex === i"
+                                    >
+            <mat-expansion-panel-header>
+                <mat-panel-title #title>
+                        <i [class]="item.icon" aria-hidden="true"></i>
+                        <small *ngIf="item.count">{{ item.count }}</small>
+                        {{  item.title | translate }}
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+        
+                <mat-list role="list">
+                    <mat-list-item role="listitem" *ngFor="let i of item.items">
+                        <button 
+                            mat-raised-button 
+                            [routerLink]="i.path"
+                            routerLinkActive="active-link"
+                            (click)="toggelSideMenuOnMobile(); stopPropagation($event)"
+                            
+                            [routerLinkActiveOptions]="{exact: true}"
+                            >
+                            <!-- <i [class]="i.icon" aria-hidden="true"></i> -->
+                            -
+                            <small *ngIf="i.count">{{ i.count }}</small>
+                            {{ i.elementTitel | translate}}
+                        </button>
+                    </mat-list-item>
+                </mat-list>
+            </mat-expansion-panel>
+        </mat-accordion>
+        
+        <mat-list role="list">
+            <mat-list-item role="listitem" *ngFor="let i of list.item">
+                <button 
+                    mat-raised-button 
+                    [routerLink]="i.path"
+                    routerLinkActive="active-link"
+                    (click)="toggelSideMenuOnMobile(); stopPropagation($event)"
+                    [routerLinkActiveOptions]="{exact: true}"
+                    >
+                    -
+                    <small *ngIf="i.count">{{ i.count }}</small>
+                    {{ i.elementTitel | translate}}
+                </button>
+            </mat-list-item>
+        </mat-list>
+
+    </ng-container>
+        
+
+        <!-- list -->
+
+</section>
+

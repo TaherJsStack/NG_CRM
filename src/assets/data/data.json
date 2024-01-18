@@ -1,0 +1,146 @@
+[   {
+    "id": 1,
+    "user": { 
+      "avatar": "assets/icons/avatar.svg", 
+      "name": "أحمد محمود", 
+      "phone": "0123456789"
+    }, 
+    "ticketNo": "C-101", 
+    "ticketValue": 40, 
+    "cinemas": [ "سينما مصر", "سينما مصر"],  
+    "countOfPeople": 1,
+    "purchasesTimes": "مرة واحدة ",
+    "ticket": {"no": "تذكرة رقم 45", "types": ["PDF", "9mb"]}
+  },
+  {
+    "id": 2,
+    "user": { 
+      "avatar": "",
+      "name": "أحمد محمود", 
+      "phone": "0123456789"
+    }, 
+    "ticketNo": "C-102", 
+    "ticketValue": 150, 
+    "cinemas": [" سرايا القبة", "برج الأطنان", "مول العرب", "سينما مصر", "سينما مصر"],  
+    "countOfPeople": 1,
+    "purchasesTimes": "مرة واحدة ",
+    "ticket": {"no": "تذكرة رقم 45", "types": ["PDF", "9mb"]}
+  },{
+    "id": 3,
+    "user": { 
+      "avatar": "assets/icons/avatar.svg", 
+      "name": "أحمد محمود", 
+      "phone": "0123456789"
+    }, 
+    "ticketNo": "C-103", 
+    "ticketValue": 80, 
+    "cinemas": [" سرايا القبة", "برج الأطنان", "مول العرب", "سينما مصر", "سينما مصر"],  
+    "countOfPeople": 1,
+    "purchasesTimes": "مرة واحدة ",
+    "ticket": {"no": "تذكرة رقم 45", "types": ["PDF", "9mb"]}
+  },{
+    "id": 4,
+    "user": { 
+      "avatar": "assets/icons/avatar.svg", 
+      "name": "أحمد محمود", 
+      "phone": "0123456789"
+    }, 
+    "ticketNo": "C-104", 
+    "ticketValue": 70, 
+    "cinemas": ["سينما مصر", "سينما مصر"],  
+    "countOfPeople": 1,
+    "purchasesTimes": "مرة واحدة ",
+    "ticket": {"no": "تذكرة رقم 45", "types": ["PDF", "9mb"]}
+  },{
+    "id": 5,
+    "user": { 
+      "avatar": "assets/icons/avatar.svg", 
+      "name": "أحمد محمود", 
+      "phone": "0123456789"
+    }, 
+    "ticketNo": "C-105", 
+    "ticketValue": 80, 
+    "cinemas": [" سرايا القبة", "برج الأطنان", "مول العرب", "سينما مصر", "سينما مصر"],  
+    "countOfPeople": 1,
+    "purchasesTimes": "مرة واحدة ",
+    "ticket": {"no": "تذكرة رقم 45", "types": ["PDF", "9mb"]}
+  },{
+    "id": 6,
+    "user": { 
+      "avatar": "assets/icons/avatar.svg", 
+      "name": "أحمد محمود", 
+      "phone": "0123456789"
+    }, 
+    "ticketNo": "C-106", 
+    "ticketValue": 40, 
+    "cinemas": [" سرايا القبة", "برج الأطنان", "مول العرب", "سينما مصر", "سينما مصر"],  
+    "countOfPeople": 1,
+    "purchasesTimes": "مرة واحدة ",
+    "ticket": {"no": "تذكرة رقم 45", "types": ["PDF", "9mb"]}
+  },{
+    "id": 7,
+    "user": { 
+      "avatar": "assets/icons/avatar.svg", 
+      "name": "أحمد محمود", 
+      "phone": "0123456789"
+    }, 
+    "ticketNo": "C-1071", 
+    "ticketValue": 90, 
+    "cinemas": [" سرايا القبة", "برج الأطنان", "مول العرب", "سينما مصر", "سينما مصر"],  
+    "countOfPeople": 1,
+    "purchasesTimes": "مرة واحدة ",
+    "ticket": {"no": "تذكرة رقم 45", "types": ["PDF", "9mb"]}
+  },{
+    "id": 8,
+    "user": { 
+      "avatar": "assets/icons/avatar.svg", 
+      "name": "أحمد محمود", 
+      "phone": "0123456789"
+    }, 
+    "ticketNo": "C-1018", 
+    "ticketValue": 40, 
+    "cinemas": [" سرايا القبة", "برج الأطنان", "مول العرب", "سينما مصر", "سينما مصر"],  
+    "countOfPeople": 1,
+    "purchasesTimes": "مرة واحدة ",
+    "ticket": {"no": "تذكرة رقم 45", "types": ["PDF", "9mb"]}
+  },{
+    "id": 9,
+    "user": { 
+      "avatar": "assets/icons/avatar.svg", 
+      "name": "أحمد محمود", 
+      "phone": "0123456789"
+    }, 
+    "ticketNo": "C-1019", 
+    "ticketValue": 40, 
+    "cinemas": [" سرايا القبة", "برج الأطنان", "مول العرب", "سينما مصر", "سينما مصر"],  
+    "countOfPeople": 1,
+    "purchasesTimes": "مرة واحدة ",
+    "ticket": {"no": "تذكرة رقم 45", "types": ["PDF", "9mb"]}
+  },{
+    "id": 10,
+    "user": { 
+      "avatar": "assets/icons/avatar.svg", 
+      "name": "أحمد محمود", 
+      "phone": "0123456789"
+    }, 
+    "ticketNo": "C-10111", 
+    "ticketValue": 40, 
+    "cinemas": [" سرايا القبة", "برج الأطنان", "مول العرب", "سينما مصر", "سينما مصر"],  
+    "countOfPeople": 1,
+    "purchasesTimes": "مرة واحدة ",
+    "ticket": {"no": "تذكرة رقم 45", "types": ["PDF", "9mb"]}
+  },{
+    "id": 11,
+    "user": { 
+      "avatar": "assets/icons/avatar.svg", 
+      "name": "أحمد محمود", 
+      "phone": "0123456789"
+    }, 
+    "ticketNo": "C-101", 
+    "ticketValue": 40, 
+    "cinemas": [" سرايا القبة", "برج الأطنان", "مول العرب", "سينما مصر", "سينما مصر"],  
+    "countOfPeople": 1,
+    "purchasesTimes": "مرة واحدة ",
+    "ticket": {"no": "تذكرة رقم 45", "types": ["PDF", "9mb"]}
+  }
+]

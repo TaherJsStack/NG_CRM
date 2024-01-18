@@ -1,0 +1,111 @@
+<div class="card">
+
+icon:   <i class="material-icons">add_circle</i>
+<span class="material-icons">
+  check_box_outline_blank
+  </span>
+  <i class="material-icons">
+    data_check
+    </i>
+  <p-table 
+      [value]="dataList" 
+      [rows]="5"
+      [paginator]="true"
+      [showCurrentPageReport]="true"
+      currentPageReportTemplate="عرض  {first} من اصل {totalRecords} "
+      [rowsPerPageOptions]="[5,10, 25, 50]"
+      
+      >
+        <ng-template pTemplate="header">
+            <tr>
+              <th pSortableColumn="id">
+                #
+              </th>
+              <th s pSortableColumn="user">
+                المستخدم
+              </th>
+              <th  pSortableColumn="ticketNo">
+                
+                رقم التذكرة
+              </th>
+              <th  pSortableColumn="ticketValue">
+                <p-sortIcon field="ticketValue"></p-sortIcon>
+                قيمى التذكرة
+              </th>
+              <th  pSortableColumn="cinemas">
+                السينمات
+              </th>
+              <th  pSortableColumn="countOfPeople">
+                عدد الأشخاص
+              </th>
+              <th  pSortableColumn="purchasesTimes">
+                عدد مرات الشراء
+              </th>
+              <th  pSortableColumn="ticket">
+                التذكرة
+              </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+            <tr>
+                <th scope="row">{{ product.id }} </th>
+                <td class="user">
+                  <div class="d-flex justify-content-center">
+                    <div class="icon-container d-flex">
+                      <ng-container *ngIf="product.user.avatar; else noAvatar">
+                        <img src="{{product.user.avatar}}" alt="" srcset="">
+                      </ng-container>
+                      <ng-template #noAvatar>
+                        <div class="no-avatar">{{ product.user.name | uppercase | slice:0:2 }}</div>
+                      </ng-template>
+                      
+                    </div>
+                    <div class="info">
+                      <p class="m-0">{{product.user.name}}</p>
+                      <small>{{product.user.phone}}</small>
+                    </div>
+                  </div>
+                </td>
+                <td>{{product.ticketNo}}</td>
+                <td>{{ product.ticketValue | currency: 'USD' }}</td>
+                <td class="text-end cinemas">
+                    <ng-container *ngIf="product.cinemas.length <= 3">
+                      {{  product.cinemas }}
+                    </ng-container>
+                    <div *ngIf="product.cinemas.length > 3">
+                      {{ product.cinemas.slice(0, 3) }} 
+                      <button tooltipEvent="{{tooltipEvent}}" pInputText tooltipPosition="top" pTooltip="{{ product.cinemas | cinemasList }}" >
+                        ...
+                      </button>
+                    </div>
+                </td>
+                <td>{{ product.countOfPeople }}</td>
+                <td>{{ product.purchasesTimes }} </td>
+                <td class="ticket">
+                  <div class="d-flex justify-content-center align-items-center">
+                    <button class="btn ticket-icon-btn">
+                      <img src="assets/icons/ticket-2.svg" alt="" srcset="">
+                    </button>
+                    <div class="info">
+                      <p class="m-0"> {{ product.ticket.no }} </p>
+                      <small>{{ product.ticket.types }}</small>
+                    </div>
+                    <button class="btn ticket-download-btn">
+                      <img src="assets/icons/download.svg" alt="" srcset="">
+                    </button>
+                  </div>
+                </td>
+              </tr>
+        </ng-template>
+        <!-- <ng-template pTemplate="paginatorright">
+          <p-button type="button" icon="pi pi-plus" styleClass="p-button-text">
+             
+          </p-button>
+      </ng-template>
+      <ng-template pTemplate="paginatorleft">
+          <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text">
+             
+          </p-button>
+      </ng-template> -->
+    </p-table>
+  </div>

@@ -1,0 +1,65 @@
+@import "../../../../scss/variables";
+// *{
+//     border: 1px solid red;
+// }
+nav{
+    background: var(--bg-nav-color);
+    color: var(--text-primary-color);
+ 
+    .navbar-brand{
+        button{
+            i{
+                color: var(--text-primary-color);
+            }
+        }
+    }
+    .nav-item{
+        display: flex;
+        align-items: center;
+        font-size: $sub-title-font-size;
+        color: var(--text-primary-color);
+
+        a{
+            color: var(--text-primary-color);
+            font-family: var(--font-family-Light);
+        }
+      
+        .bell-dropdown-toggle{
+            &:after{
+                content: unset;
+            }
+        }
+        .btn{
+            position: relative;
+            color: var(--text-primary-color);
+
+            .badge{
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 0;
+                width: 17px;
+                height: 17px;
+                line-height: inherit;
+                border-radius: 100%;
+                background-color: red;
+            }
+        }
+        .dropdown-menu{
+            max-width: 48px;
+            min-width: 106px;
+            padding: 0;
+            color: var(--bg-white-color);
+            background-color: var(--bg-nav-color);
+            .dropdown-item{
+                padding: 1px 5px !important;
+                font-size: $sub-title-font-size;
+                &:hover{
+                    background-color: var(--bg-success-color);
+                }
+            }
+        }
+    }
+
+}
+

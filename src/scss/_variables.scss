@@ -1,0 +1,64 @@
+// $bg-primary-color: #636e72;
+// $bg-secondary-color: #40739e;
+// $bg-success-color: #2c3e50;
+// $bg-info-color: #b2bec3;
+// $bg-white-color: #fff;
+
+$bg-primary-color: #2d3e4e;
+$bg-secondary-color: #586d7e;
+$bg-aside-color: #586d7e;
+$bg-body-color: #586d7e;
+$bg-success-color: #8097a7;
+$bg-info-color: #bcd3e1;
+$bg-white-color: #ffffff;
+
+$text-primary-color: #2d3e4e;
+$text-secondary-color: #586d7e;
+$text-success-color: #8097a7;
+$text-white-color: #fff;
+
+$title-font-size: 14px;
+$sub-title-font-size: 12px;
+$text-font-size: 11px;
+$small-font-size: 10px;
+
+[data-theme="dark"] {
+    // dark theme styles
+    --bg-nav-color: #2d3e4e;
+    --bg-aside-color: #2d3e4e;
+    --bg-body-color: rgba(47, 61, 72, 0.952);
+
+    --bg-primary-color: #2d3e4e;
+    --bg-secondary-color: #586d7e;
+    --bg-success-color: #8097a7;
+    --bg-info-color: #bcd3e1;
+    --bg-white-color: #ffffff;
+    
+    --text-primary-color: #ffffff;
+    --text-secondary-color: #586d7e;
+    --text-success-color: #8097a7;
+
+}
+
+[data-theme="light"] {
+    // Light theme
+    --bg-nav-color: #4f80a7;
+    --bg-aside-color: #324f67;
+    --bg-body-color: #dcdcdc;
+
+    --bg-primary-color: #2d3e4e;
+    --bg-secondary-color: #586d7e;
+    --bg-success-color: #586d7e;
+    --bg-info-color: #2d3e4e;
+    --bg-white-color: #fff;
+    
+    --text-primary-color: #000000;
+    --text-secondary-color: #8097a7;
+    --text-success-color: #586d7e;
+
+}
+
+
+
+// 0963761517
+// 107171355

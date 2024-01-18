@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/fonts/icons/icons.scss";
+@import "./scss/fonts";
+@import "./scss/variables";
+@import "./scss/mixins";
+@import "./scss/global";
+@import "./scss/placeholder";
+// @import "./scss/sections";
+
+.btn{
+    :focus,
+    :checked,
+    :active{
+        border-color: unset !important;
+        border: unset !important;
+    }
+}
+
+[dir="rtl"] {
+    .ms-auto {
+        margin-right: auto !important;
+        margin-left: unset !important;  
+    }
+    .me-auto {
+        margin-left: auto !important;
+        margin-right: unset !important;  
+    }
+}
+
+.modal-backdrop{
+    display: none !important;
+}
+
+
+.mat-expansion-panel-body {
+    padding: 0 !important;
+}
+
+.mat-expansion-indicator {
+    &::after{
+        color: var(--bg-white-color) !important;
+    }
+}

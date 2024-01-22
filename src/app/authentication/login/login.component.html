@@ -1,6 +1,13 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+    
+    <input class="input-group" type="email" formControlName="email" placeholder="E-mail... " autocomplete="false">
+    <input class="input-group" type="password" formControlName="password" placeholder="Password...">
+    
+    <button type="submit">login</button>
 
-<form action="">
 
-    <a [routerLink]="['/pages']">login</a>
 </form>
+
+
+
 

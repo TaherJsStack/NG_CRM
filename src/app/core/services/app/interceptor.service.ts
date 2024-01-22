@@ -1,30 +1,25 @@
-// import { ToastrService } from 'ngx-toastr';
 
 import {
   HttpEvent,
-  HttpEventType,
   HttpHandler,
   HttpInterceptor,
   HttpRequest,
   HttpErrorResponse
 } from '@angular/common/http';
-import { Observable, from, throwError } from 'rxjs';
-import { finalize, mergeMap, retryWhen, switchMap, tap } from 'rxjs/operators';
+import { Observable, from, throwError, timer } from 'rxjs';
+import { finalize, mergeMap, retryWhen, switchMap, tap, catchError } from 'rxjs/operators';
 
 import { Injectable } from '@angular/core';
 
-import { timer } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { UserModel } from '../../models/user';
+import { IUserModel } from '../../models';
 import { Router } from '@angular/router';
 import { LoaderService } from './loader.service';
-
-import {catchError} from "rxjs/operators";
 
 @Injectable()
 export class Interceptor implements HttpInterceptor {
   
-  user:       UserModel = {} as UserModel;
+  user:       IUserModel = {} as IUserModel;
   token:      string = '';
   cartId:     string = '';
   favoriteId: string = '';
@@ -55,8 +50,7 @@ export class Interceptor implements HttpInterceptor {
       Promise.all([
         // this.user = JSON.parse(localStorage.getItem("fullInfo") as string),
         this.token      = localStorage.getItem("token") as string,
-        this.cartId     = localStorage.getItem("cartId") as string || '',
-        this.favoriteId = localStorage.getItem("favoriteId") as string || '',
+  
       ])
     ).pipe(
       switchMap((val) => {
@@ -74,7 +68,7 @@ export class Interceptor implements HttpInterceptor {
         });
 
         if (this.count === 0) {
-          this.loaderService.startloaderState(true)
+          this.loaderService.startLoaderState(true)
         }
         
         this.count++;
@@ -189,7 +183,7 @@ export class Interceptor implements HttpInterceptor {
           finalize(() =>{
             this.count--;
             if (this.count === 0) {
-              this.loaderService.startloaderState(false)
+              this.loaderService.startLoaderState(false)
             }}
           )
         )

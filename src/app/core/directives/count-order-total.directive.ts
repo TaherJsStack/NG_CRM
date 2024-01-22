@@ -1,7 +1,5 @@
 import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { ProductModel } from '../models';
-import { OrderProductModel } from '../models/order-product';
+import { IProductModel, IOrderIProductModel } from '../models';
 
 
 @Directive({
@@ -9,9 +7,9 @@ import { OrderProductModel } from '../models/order-product';
 })
 export class CountOrderTotalDirective implements OnInit{
 
-  @Input() products: OrderProductModel[] = [];
+  @Input() products: IOrderIProductModel[] = [];
 
-  orderProducts:  ProductModel[]  = [];
+  orderProducts:  IProductModel[]  = [];
 
   constructor(
     private elementRef:       ElementRef, 
@@ -24,7 +22,7 @@ export class CountOrderTotalDirective implements OnInit{
     }
   }
 
-  getOrderProductsIds(products: OrderProductModel[]) {
+  getOrderProductsIds(products: IOrderIProductModel[]) {
     let idsList = products.map(product => product.ProductId)
     if (idsList.length) {
       this.getOrderProductsByIds(idsList)
@@ -39,7 +37,7 @@ export class CountOrderTotalDirective implements OnInit{
     // })
   }
 
-  joinquantityToEachPorduct(_orderProduct: ProductModel[]) {
+  joinquantityToEachPorduct(_orderProduct: IProductModel[]) {
     let newProductsList   = _orderProduct.map(orderProduct => {
       const foundProduct  = this.products.find(foundOrderProduct => foundOrderProduct.ProductId === orderProduct.ProductId);
       return { ...orderProduct, ...foundProduct };
@@ -47,7 +45,7 @@ export class CountOrderTotalDirective implements OnInit{
     this.calcOrderTotal(newProductsList)
   }
 
-  calcOrderTotal(newProductsList: ProductModel[]) {
+  calcOrderTotal(newProductsList: IProductModel[]) {
     let total = newProductsList.reduce((acc, curr) => {
       return acc + curr.Quantity * curr.ProductPrice;
     },0)

@@ -50,7 +50,7 @@ export class ApexChartComponent  implements OnInit, AfterViewInit, OnDestroy{
     },
     xaxis: {
       categories: [
-        " يناير",
+        "يناير",
         "فبراير",
         "مارس",
         "ابريل",
@@ -113,12 +113,12 @@ export class ApexChartComponent  implements OnInit, AfterViewInit, OnDestroy{
   
   };
  
- chart = new ApexCharts(document.querySelector("#chart"), this.options);
+ chart = new ApexCharts(document.querySelector("#chart11"), this.options);
 
  constructor() { }
 
  ngOnInit(): void {
-   this.chart = new ApexCharts(document.querySelector("#chart"), this.options);
+   this.chart = new ApexCharts(document.querySelector("#chart11"), this.options);
  }
 
  ngAfterViewInit(): void {
@@ -128,7 +128,7 @@ export class ApexChartComponent  implements OnInit, AfterViewInit, OnDestroy{
  ngOnDestroy(): void {
   //Called once, before the instance is destroyed.
   //Add 'implements OnDestroy' to the class.
-  this.chart.destroy()
+  // this.chart.destroy()s
  }
 
 

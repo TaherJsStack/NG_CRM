@@ -1,0 +1,20 @@
+
+<div class="card">
+    @if (showCardHeader) {
+        <div class="card-header">
+            <div class="d-flex justify-content-between">
+                <div class="slot1">
+                    <ng-content select="[CardContentSlotA]"></ng-content>
+                </div>
+                <div class="slot2">
+                    <ng-content select="[CardContentSlotB]"></ng-content>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="card-body">
+        <ng-content select="[CardContent]"></ng-content>
+    </div>
+</div>
+
+  

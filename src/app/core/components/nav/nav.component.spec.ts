@@ -4,7 +4,7 @@ import { NavComponent } from './nav.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { SharedModule } from '../../shared/shared.module';
 import { RouterTestingModule } from "@angular/router/testing";
-import { NavItemsListModel } from '../../models';
+import { INavItemsListModel } from '../../models';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { CartService } from '../../services/cart.service';
@@ -56,7 +56,7 @@ describe('NavComponent', () => {
       fixture.detectChanges();
       await fixture.whenStable();
       // Arrange
-      const obj: NavItemsListModel[] =  [
+      const obj: INavItemsListModel[] =  [
         {title: 'Products', path: '/'},
         {title: 'Orders', path: '/orders'},
       ]

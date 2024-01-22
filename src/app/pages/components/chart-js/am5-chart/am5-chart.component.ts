@@ -35,7 +35,7 @@ export class Am5ChartComponent {
 
   ngAfterViewInit() {
     // Chart code goes in here
-    this.browserOnly(() => {
+    // this.browserOnly(() => {
       let root = am5.Root.new("chartdiv");
 
       root.setThemes([am5themes_Animated.new(root)]);
@@ -113,7 +113,7 @@ export class Am5ChartComponent {
       chart.set("cursor", am5xy.XYCursor.new(root, {}));
 
       this.root = root;
-    });
+    // });
   }
 
   ngOnDestroy() {

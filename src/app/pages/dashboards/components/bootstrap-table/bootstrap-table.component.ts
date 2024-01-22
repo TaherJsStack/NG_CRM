@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataListInterface } from '../../../../core/models/data-list';
-import { DataListService } from '../../../../core/services/data-list.service';
+import { IDataListInterface } from '../../../../core/models';
+import { DataListService } from '../../../../core/services';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 })
 export class BootstrapTableComponent implements OnInit {
 
-  dataList: DataListInterface[] = [] 
+  dataList: IDataListInterface[] = [] 
   
   constructor( private dataListService: DataListService){}
 

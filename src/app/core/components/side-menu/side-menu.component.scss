@@ -8,7 +8,7 @@ section{
         width: 80%;
         margin: 5px auto;
     }
-    .sectioneTitle{
+    .sectionTitle{
         margin-inline-start: 10px;
     }
     mat-accordion{
@@ -71,11 +71,9 @@ section{
             }
             
         }
-        
     
         mat-list{
             mat-list-item{
-                
                 button{
                     padding: 0 25px;
                     padding-inline-start: 27px;
@@ -94,7 +92,6 @@ section{
                 padding: 0 0px;
                 border-radius: 0;
                 text-align: inherit;
-                // padding-inline-start: 27px;
                 justify-content: flex-start;
                 font-size: $sub-title-font-size;
                 color: var(--text-primary-color);
@@ -153,7 +150,6 @@ section{
             color: green;
         }
     }
-    
 
     :root :host-context(html[dir="rtl"]) {
         :host-context(.full-drawer-container) {}

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable, forkJoin, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { LocalstorageService } from '../app/localstorage.service';
+import { LocalstorageService } from '../storage';
 import { Router } from '@angular/router';
 
 @Injectable({

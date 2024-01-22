@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { TooltipModule } from 'primeng/tooltip';
 
 @Pipe({
   name: 'cinemasList',

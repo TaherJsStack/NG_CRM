@@ -1,8 +1,17 @@
-.welcome{
-    h4{
-        color: var(--text-primary-color);
+
+mat-drawer-container{
+    height: 100%;
+    mat-drawer{
+        background: var(--bg-aside-color);
+        border-color: var(--bg-primary-color);
+        background-color: aqua;
+        width: 17%;
+        
     }
-    p{
-        color: var(--text-secondary-color);
+    .drawer-content{
+        background-color: var(--bg-body-color);
     }
+}
+
+main{
 }

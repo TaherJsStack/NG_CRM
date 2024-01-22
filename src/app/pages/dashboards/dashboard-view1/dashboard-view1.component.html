@@ -3,9 +3,10 @@
 <div class="">
 
     <div class="row">
-        <div class="col-md-6 col-xl-3">
-            <div class="card">
-                <div class="card-body">
+
+        <div class="col-md-6 col-xl-3">  
+            <app-card-template  [showCardHeader]="false">
+                <ng-container CardContent>
                     <div class="row">
                         <div class="col-6">
                             <div class="avatar-sm rounded">
@@ -27,13 +28,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div> <!-- end card-->
+                </ng-container>
+            </app-card-template>
         </div> <!-- end col -->
 
         <div class="col-md-6 col-xl-3">
-            <div class="card">
-                <div class="card-body">
+            <app-card-template  [showCardHeader]="false">
+                <ng-container CardContent>
                     <div class="row">
                         <div class="col-6">
                             <div class="avatar-sm rounded">
@@ -55,13 +56,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div> <!-- end card-->
+                </ng-container>
+            </app-card-template>
         </div> <!-- end col -->
 
         <div class="col-md-6 col-xl-3">
-            <div class="card">
-                <div class="card-body">
+            <app-card-template  [showCardHeader]="false">
+                <ng-container CardContent>
                     <div class="row">
                         <div class="col-6">
                             <div class="avatar-sm rounded">
@@ -83,13 +84,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div> <!-- end card-->
+                </ng-container>
+            </app-card-template>
         </div> <!-- end col -->
 
         <div class="col-md-6 col-xl-3">
-            <div class="card">
-                <div class="card-body">
+            <app-card-template  [showCardHeader]="false">
+                <ng-container CardContent>
                     <div class="row">
                         <div class="col-6">
                             <div class="avatar-sm rounded">
@@ -111,23 +112,25 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div> <!-- end card-->
+                </ng-container>
+            </app-card-template>
         </div> <!-- end col -->
     </div>
 
     <div class="row mt-3">
-        <div class="col-xl-4 col-md-12">
-            <!-- Portlet card -->
-            <div class="card" #card_1>
-                <div class="card-body">
+        <div class="col-xl-4 col-md-12" #card_0>
+            <app-card-template>
+                <ng-container CardContentSlotA>
+                    <h4 class="header-title mb-0">Lifetime Sales</h4>
+                </ng-container>
+                <ng-container CardContentSlotB>
                     <div class="card-widgets">
                         <button class="btn" data-bs-toggle="reload"><i class="fa fa-refresh" aria-hidden="true"></i></button >
                         <button class="btn" data-bs-toggle="collapse" href="#cardCollpase1" role="button" aria-expanded="false" aria-controls="cardCollpase1"><i class="fa fa-minus"></i></button>
-                        <button class="btn" appRemoveCard [card]="card_1"><i class="fa fa-close"></i>00</button>
+                        <button class="btn" appRemoveCard [card]="card_0"><i class="fa fa-close"></i></button>
                     </div>
-                    <h4 class="header-title mb-0">Lifetime Sales</h4>
-
+                </ng-container>
+                <ng-container CardContent>
                     <div id="cardCollpase1" class="collapse show">
                         <div class="text-center pt-3">
                             <div id="lifetime-sales" data-colors="#00acc1,#f1556c">
@@ -155,20 +158,23 @@
 
                         </div>
                     </div> <!-- collapsed end -->
-                </div> <!-- end card-body -->
-            </div> <!-- end card-->
+                </ng-container>
+            </app-card-template>
         </div> <!-- end col-->
 
-        <div class="col-xl-4 col-md-6">
-            <div class="card" #card_2>
-                <div class="card-body">
+        <div class="col-xl-4 col-md-6" #card_2>
+            <app-card-template>
+                <ng-container CardContentSlotA>
+                    <h4 class="header-title mb-0">Income Amounts</h4>
+                </ng-container>
+                <ng-container CardContentSlotB>
                     <div class="card-widgets d-flex just">
                         <button class="btn" data-bs-toggle="reload"><i class="fa fa-refresh" aria-hidden="true"></i></button>
                         <button class="btn" data-bs-toggle="collapse" href="#cardCollpase2" role="button" aria-expanded="false" aria-controls="cardCollpase2"><i class="fa fa-minus"></i></button>
                         <button class="btn" appRemoveCard [card]="card_2" ><i class="fa fa-close"></i></button>
                     </div>
-                    <h4 class="header-title mb-0">Income Amounts</h4>
-
+                </ng-container>
+                <ng-container CardContent>
                     <div id="cardCollpase2" class="collapse show">
                         <div class="text-center pt-3">
 
@@ -196,26 +202,29 @@
                             </div> <!-- end row -->
                         </div>
                     </div> <!-- collapsed end -->
-                </div> <!-- end card-body -->
-            </div> <!-- end card-->
-        </div> <!-- end col-->
+                </ng-container>
+            </app-card-template>
+        </div>
 
-        <div class="col-xl-4 col-md-6">
-            <div class="card" #card_3>
-                <div class="card-body">
+        <div class="col-xl-4 col-md-6" #card_3>
+            <app-card-template>
+                <ng-container CardContentSlotA>
+                    <h4 class="header-title mb-0">Total Users</h4>
+                </ng-container>
+                <ng-container CardContentSlotB>
                     <div class="card-widgets">
                         <button class="btn" data-bs-toggle="reload"><i class="fa fa-refresh" aria-hidden="true"></i> </button>
                         <button class="btn" data-bs-toggle="collapse" href="#cardCollpase3" role="button" aria-expanded="false" aria-controls="cardCollpase3"><i class="fa fa-minus"></i></button>
                         <button class="btn" appRemoveCard [card]="card_3" ><i class="fa fa-close"></i></button>
                     </div>
-                    <h4 class="header-title mb-0">Total Users</h4>
-
+                </ng-container>
+                <ng-container CardContent>
                     <div id="cardCollpase3" class="collapse show">
                         <div class="text-center pt-3">
                             <div id="total-users" data-colors="#00acc1,#4b88e4,#e3eaef,#fd7e14">
                                 <app-chartjs 
                                     [id]="chartJsTypesEnum.doughnut+22" 
-                                    [type]="chartJsTypesEnum.doughnut" 
+                                    [type]="chartJsTypesEnum.line" 
                                     [data]="data"
                                     [options]="options"
                                     ></app-chartjs>
@@ -236,8 +245,9 @@
                             </div> <!-- end row -->
                         </div>
                     </div> <!-- collapsed end -->
-                </div> <!-- end card-body -->
-            </div> <!-- end card-->
+                </ng-container>
+            </app-card-template>
+
         </div> <!-- end col-->
     </div>
  

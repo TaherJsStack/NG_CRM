@@ -8,7 +8,7 @@ export const PagesRouting: Routes =  [
     component: PagesComponent,
     children: [
       {
-        path: '',
+        path: 'dashboards',
         loadChildren: () => import('./dashboards/dashboard-routing.module').then(x => x.DashboardRouting)
       },
       {
@@ -25,7 +25,7 @@ export const PagesRouting: Routes =  [
       },
       {
         path: '**',
-        redirectTo: '',
+        redirectTo: 'dashboards',
       },
     ]
   },

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
-import { DataListInterface } from '../../../../core/models/data-list';
+import { IDataListInterface } from '../../../../core/models';
 import { DataListService } from '../../../../core/services';
 import { CommonModule } from '@angular/common';
 import { TooltipModule } from 'primeng/tooltip';
@@ -26,7 +26,7 @@ export class PrimengTableComponent {
 
   tooltipEvent: 'focus' | 'hover' = 'hover';
 
-  dataList: DataListInterface[] = [] 
+  dataList: IDataListInterface[] = [] 
 
   constructor(private dataListService: DataListService){}
 

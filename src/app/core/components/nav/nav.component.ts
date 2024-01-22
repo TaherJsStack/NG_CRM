@@ -1,16 +1,16 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output, Inject } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
-import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
-import { NgClass, NgFor, NgIf, CommonModule } from '@angular/common';
-import { MatBadgeModule } from '@angular/material/badge';
-import { MatButtonModule } from '@angular/material/button';
-import { LanguageService, ThemeService } from '../../services/app';
-import { DOCUMENT } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
-import {MatRippleModule} from '@angular/material/core';
-import { BrowserModule } from '@angular/platform-browser';
+
+import { MatBadgeModule }   from '@angular/material/badge';
+import { MatIconModule }    from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule }  from '@angular/material/button';
+import { MatRippleModule }  from '@angular/material/core';
+
+import { LanguageService, ThemeService } from '../../services/app';
 
 @Component({
   selector: 'app-nav',
@@ -32,12 +32,11 @@ import { BrowserModule } from '@angular/platform-browser';
 export class NavComponent implements OnInit, OnDestroy {
 
   @Output() asideMenu = new EventEmitter<boolean>();
-
-  itemsCount$: Observable<number> = new Observable;
-  langValue: string = 'en'
   private subscription: Subscription = new Subscription;
 
-  isDarkTheme: boolean = true
+  langValue: string = 'en';
+  isDarkTheme: boolean = true;
+  itemsCount$: Observable<number> = new Observable;
 
   constructor( 
     @Inject(DOCUMENT) private document: Document,

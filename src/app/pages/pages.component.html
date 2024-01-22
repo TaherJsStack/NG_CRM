@@ -1,22 +1,25 @@
-<!-- <p>pages works!</p> -->
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="#">Home</a></li>
-      <li class="breadcrumb-item"><a href="#">Library</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Data</li>
-    </ol>
-</nav>
 
-<div class="row mb-3 pb-1 welcome">
-    <div class="col-12">
-        <div class="d-flex align-items-lg-center flex-lg-row flex-column">
-            <div class="flex-grow-1">
-                <h4 class="mb-1">Good Morning, Admin!</h4>
-                <p class="mb-0">Here's what's happening with your System today.</p>
-            </div>
-        </div><!-- end card header -->
+<mat-drawer-container #drawerContainer class="example-container" autosize [dir]="direction">
+    <mat-drawer #drawer class="example-sidenav mat-drawer-transition" [mode]="DrawerMode" opened>
+        <app-side-menu (asideMenu)="drawer.toggle()" [asideMenuState]="drawer"></app-side-menu>
+      </mat-drawer>
+  
+    <div class="drawer-content">
+      
+      <app-nav (asideMenu)="isAsideMenu(drawer.toggle(), drawer)"></app-nav>
+      
+      <main class="container">
+
+        <app-breadcrumb></app-breadcrumb>
+        
+        <app-welcome></app-welcome>
+
+        <div class="p-2">
+            <router-outlet></router-outlet>
+        </div>
+      </main>
+      <app-footer></app-footer>
     </div>
-<!--end col-->
-</div>
-
-<router-outlet></router-outlet>
+  
+  </mat-drawer-container>
+  

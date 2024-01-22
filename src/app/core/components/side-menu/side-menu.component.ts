@@ -1,16 +1,15 @@
 import { FormsModule } from '@angular/forms';
-import { Component, EventEmitter, OnInit, Output, Input, ViewChild, QueryList, ViewChildren } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatListModule } from '@angular/material/list';
-import { MatAccordion, MatExpansionModule, MatExpansionPanel } from '@angular/material/expansion';
-import { NgFor, NgIf, CommonModule } from '@angular/common';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { UsersService } from '../../services';
-import { UserModel } from '../../models/index';
+import { IUserModel } from '../../models/index';
 import { RoleEnum } from '../../enums/index';
-import { ISideList } from '../models/nav.interface';
-
+import { ISideList } from '../../models';
 
 @Component({
   selector: 'app-side-menu',
@@ -31,7 +30,7 @@ export class SideMenuComponent implements OnInit {
   // @ViewChild('accordion') accordion!: MatAccordion 
   @Input()  asideMenuState: any;
   @Output() asideMenu = new EventEmitter<boolean>();
-  user:     UserModel = {} as UserModel;
+  user:     IUserModel = {} as IUserModel;
 
   roleEnum        = RoleEnum
   // panelOpenState  = false;
@@ -54,31 +53,79 @@ export class SideMenuComponent implements OnInit {
 
   sideList: ISideList[] = [
     {
-      sectioneTitle: 'MENU',
+      sectionTitle: 'MENU',
       accordionItems: [
         {title: 'SideMenu.Dashboards', icon:"fa fa-tachometer", items: [
-          {elementTitel: 'SideMenu.DashboardView1', icon:"fa fa-tachometer", path: '/dashboards/dashboard-view1'},
-          {elementTitel: 'SideMenu.DashboardView2', icon:"fa fa-tachometer", path: '/dashboards/dashboard-view2'},
-          {elementTitel: 'SideMenu.DashboardView3', icon:"fa fa-tachometer", path: '/dashboards/dashboard-view3'},
+          {elementTitle: 'SideMenu.DashboardView1', icon:"fa fa-tachometer", path: '/pages/dashboards/dashboard-view1'},
+          {elementTitle: 'SideMenu.DashboardView2', icon:"fa fa-tachometer", path: '/pages/dashboards/dashboard-view2'},
+          {elementTitle: 'SideMenu.DashboardView3', icon:"fa fa-tachometer", path: '/pages/dashboards/dashboard-view3'},
         ]
       },
       {title: 'SideMenu.DataList', icon:"fa fa-users", items: [
-          {elementTitel: 'SideMenu.Bootstrap',  icon:"fa fa-database", path: '/data-list/bootstrap'},
-          {elementTitel: 'SideMenu.NgMaterial', icon:"fa fa-database", path: '/data-list/ng-material'},
-          {elementTitel: 'SideMenu.Custom',     icon:"fa fa-database", path: '/data-list/custom'},
-          {elementTitel: 'SideMenu.Primeng',     icon:"fa fa-database", path: '/data-list/primeng'},
+          {elementTitle: 'SideMenu.Bootstrap',  icon:"fa fa-database", path: '/pages/data-list/bootstrap'},
+          {elementTitle: 'SideMenu.NgMaterial', icon:"fa fa-database", path: '/pages/data-list/ng-material'},
+          {elementTitle: 'SideMenu.Custom',     icon:"fa fa-database", path: '/pages/data-list/custom'},
+          {elementTitle: 'SideMenu.Primeng',    icon:"fa fa-database", path: '/pages/data-list/primeng'},
         ]
       },
       {title: 'SideMenu.Forms', icon:"fa fa-users", items: [
-          {elementTitel: 'SideMenu.Bootstrap',  icon:"fa fa-database",    path: '/forms/bootstrap'},
-          {elementTitel: 'SideMenu.NgMaterial', icon:"fa fa-plus-square", path: '/forms/ng-material'},
-          {elementTitel: 'SideMenu.Custom',     icon:"fa fa-plus-square", path: '/forms/custom'},
+          {elementTitle: 'SideMenu.Bootstrap',  icon:"fa fa-database",    path: '/pages/forms/bootstrap'},
+          {elementTitle: 'SideMenu.NgMaterial', icon:"fa fa-plus-square", path: '/pages/forms/ng-material'},
+          {elementTitle: 'SideMenu.Custom',     icon:"fa fa-plus-square", path: '/pages/forms/custom'},
         ]
       },
       ],
     },
     {
-      sectioneTitle: 'PAGES',
+      sectionTitle: 'authentication',
+      accordionItems: [],
+      item:[
+        {
+          elementTitle: 'login', 
+          icon: 'string', 
+          path: '/authentication', 
+          count: 0
+        },
+        {
+          elementTitle: 'forgot password', 
+          icon: 'string', 
+          path: '/authentication/forgot', 
+          count: 0
+        },
+        {
+          elementTitle: 'reset password', 
+          icon: 'string', 
+          path: '/authentication/reset', 
+          count: 0
+        },
+        {
+          elementTitle: 'confirm password', 
+          icon: 'string', 
+          path: '/authentication/confirm', 
+          count: 0
+        },
+      ],
+    },
+    {
+      sectionTitle: 'errors',
+      accordionItems: [],
+      item:[
+        {
+          elementTitle: '404', 
+          icon: 'string', 
+          path: '/errors', 
+          count: 0
+        },
+        {
+          elementTitle: '500', 
+          icon: 'string', 
+          path: '/errors/500', 
+          count: 0
+        }
+      ],
+    },
+    {
+      sectionTitle: 'PAGES',
       accordionItems: [
         {
           title: 'title', 
@@ -86,19 +133,19 @@ export class SideMenuComponent implements OnInit {
           count: 1, 
           items: [
             {
-              elementTitel: 'string', 
+              elementTitle: 'string', 
               icon: 'string', 
               path: 'string', 
               count: 0
             },
             {
-              elementTitel: 'string', 
+              elementTitle: 'string', 
               icon: 'string', 
               path: 'string', 
               count: 0
             },
             {
-              elementTitel: 'string', 
+              elementTitle: 'string', 
               icon: 'string', 
               path: 'string', 
               count: 0
@@ -108,19 +155,19 @@ export class SideMenuComponent implements OnInit {
       ],
       item:[
         {
-          elementTitel: 'string 0', 
+          elementTitle: 'string 0', 
           icon: 'string', 
           path: 'string', 
           count: 0
         },
         {
-          elementTitel: 'string 1', 
+          elementTitle: 'string 1', 
           icon: 'string', 
           path: 'string', 
           count: 0
         },
         {
-          elementTitel: 'string 2', 
+          elementTitle: 'string 2', 
           icon: 'string', 
           path: 'string', 
           count: 0
@@ -128,7 +175,7 @@ export class SideMenuComponent implements OnInit {
       ],
     },
     {
-      sectioneTitle: 'COMPONENTS',
+      sectionTitle: 'COMPONENTS',
       accordionItems: [
         {
           title: 'title', 
@@ -136,44 +183,19 @@ export class SideMenuComponent implements OnInit {
           count: 1, 
           items: [
             {
-              elementTitel: 'string', 
+              elementTitle: 'string', 
               icon: 'string', 
               path: 'string', 
               count: 0
             },
             {
-              elementTitel: 'string', 
+              elementTitle: 'string', 
               icon: 'string', 
               path: 'string', 
               count: 0
             },
             {
-              elementTitel: 'string', 
-              icon: 'string', 
-              path: 'string', 
-              count: 0
-            },
-          ]
-        },
-        {
-          title: 'title', 
-          icon: 'string', 
-          count: 1, 
-          items: [
-            {
-              elementTitel: 'string', 
-              icon: 'string', 
-              path: 'string', 
-              count: 0
-            },
-            {
-              elementTitel: 'string', 
-              icon: 'string', 
-              path: 'string', 
-              count: 0
-            },
-            {
-              elementTitel: 'string', 
+              elementTitle: 'string', 
               icon: 'string', 
               path: 'string', 
               count: 0
@@ -186,19 +208,44 @@ export class SideMenuComponent implements OnInit {
           count: 1, 
           items: [
             {
-              elementTitel: 'string', 
+              elementTitle: 'string', 
               icon: 'string', 
               path: 'string', 
               count: 0
             },
             {
-              elementTitel: 'string', 
+              elementTitle: 'string', 
               icon: 'string', 
               path: 'string', 
               count: 0
             },
             {
-              elementTitel: 'string', 
+              elementTitle: 'string', 
+              icon: 'string', 
+              path: 'string', 
+              count: 0
+            },
+          ]
+        },
+        {
+          title: 'title', 
+          icon: 'string', 
+          count: 1, 
+          items: [
+            {
+              elementTitle: 'string', 
+              icon: 'string', 
+              path: 'string', 
+              count: 0
+            },
+            {
+              elementTitle: 'string', 
+              icon: 'string', 
+              path: 'string', 
+              count: 0
+            },
+            {
+              elementTitle: 'string', 
               icon: 'string', 
               path: 'string', 
               count: 0

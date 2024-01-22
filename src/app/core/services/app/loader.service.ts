@@ -10,7 +10,7 @@ export class LoaderService {
   
   constructor() { }
 
-  startloaderState(state: boolean) {
+  startLoaderState(state: boolean) {
     this.loaderState.next(state)
   }
 

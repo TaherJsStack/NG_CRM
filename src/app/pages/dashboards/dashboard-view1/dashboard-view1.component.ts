@@ -4,7 +4,7 @@ import { isPlatformBrowser } from '@angular/common';
 
 
 import { RemoveCardDirective } from '../../../core/directives/remove-card.directive';
-import { ChartjsComponent, Am5ChartComponent } from '../../components';
+import { ChartjsComponent, Am5ChartComponent, CardTemplateComponent } from '../../components';
 import { ChartJsTypesEnum } from '../../../core/enums';
 import { ChartData } from 'chart.js';
 
@@ -16,7 +16,8 @@ import { ChartData } from 'chart.js';
   imports: [
     RemoveCardDirective,
     ChartjsComponent,
-    Am5ChartComponent
+    Am5ChartComponent,
+    CardTemplateComponent
   ]
 })
 export class DashboardView1Component implements OnInit {
